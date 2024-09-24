@@ -3,6 +3,8 @@ import 'dart:async';
 
 import 'package:app_context/app_context.dart';
 
+/// try to code "launch log server"
+
 abstract interface class Server {
   Future<void> start({required final String address, required final int port});
 }
