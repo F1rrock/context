@@ -1,6 +1,6 @@
-import 'package:context/src/core/errors/no_value_with_such_key.dart';
-import 'package:context/src/core/errors/unresolved_value.dart';
-import 'package:context/src/core/storages/key_value_storage.dart';
+import 'package:app_context/src/core/errors/no_value_with_such_key.dart';
+import 'package:app_context/src/core/errors/unresolved_value.dart';
+import 'package:app_context/src/core/storages/key_value_storage.dart';
 
 /// implementation of the most common variation of key value storage, just adapter for Map type
 final class InMemoryStorage<Key> implements KeyValueStorage<Key> {

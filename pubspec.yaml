@@ -1,4 +1,4 @@
-name: context
+name: app_context
 description: The Context library provides a comprehensive set of tools for managing and transferring application context efficiently.
 version: 1.0.0
 homepage: https://github.com/F1rrock/context

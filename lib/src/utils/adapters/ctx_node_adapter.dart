@@ -1,5 +1,5 @@
-import 'package:context/src/core/ctx/context.dart';
-import 'package:context/src/core/ctx/context_node.dart';
+import 'package:app_context/src/core/ctx/context.dart';
+import 'package:app_context/src/core/ctx/context_node.dart';
 
 /// adapts required generic type to ContextNode interface with the same type
 final class CtxNodeAdapter<Base> implements ContextNode<Base> {

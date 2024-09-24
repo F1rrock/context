@@ -1,4 +1,4 @@
-import 'package:context/src/core/ctx/context.dart';
+import 'package:app_context/src/core/ctx/context.dart';
 
 /// ContextNode will wrap a Base object (generic type) to let the methods of the base object know about
 /// context attached context using partial application concept from functional programming style

@@ -1,4 +1,4 @@
-import 'package:context/src/core/traits/trait.dart';
+import 'package:app_context/src/core/traits/trait.dart';
 
 /// an object that implements Context interface will pass through components of system directly.
 /// this object will store some configuration info to let "decorators" know, which implementation

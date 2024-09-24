@@ -1,6 +1,6 @@
-import 'package:context/src/core/ctx/context.dart';
-import 'package:context/src/core/storages/key_value_storage.dart';
-import 'package:context/src/core/traits/trait.dart';
+import 'package:app_context/src/core/ctx/context.dart';
+import 'package:app_context/src/core/storages/key_value_storage.dart';
+import 'package:app_context/src/core/traits/trait.dart';
 
 /// implementation of Context interface that acts as proxy for encapsulated of key value storage
 final class StdContext implements Context {

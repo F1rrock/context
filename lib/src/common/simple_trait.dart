@@ -1,4 +1,4 @@
-import 'package:context/context.dart';
+import 'package:app_context/app_context.dart';
 
 /// implementation of Trait interface that only refers to fetch value from passed storage
 final class SimpleTrait<Form> implements Trait<Form> {

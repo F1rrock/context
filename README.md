@@ -35,7 +35,7 @@ dart pub get
 A `Context` object stores configuration information that is passed between different system components. The context is immutable and is typically injected at the application startup.
 
 ```dart
-import 'package:context/src/core/traits/trait.dart';
+import 'package:app_context/src/core/traits/trait.dart';
 
 /// An object that implements the Context interface to pass configuration data.
 abstract interface class Context {
@@ -51,7 +51,7 @@ Form interpret<Form>({required final Trait<Form> as});
 To pass context into system components, use the `ContextNode` interface, which allows partial application by attaching the context to a base object.
 
 ```dart
-import 'package:context/src/core/ctx/context.dart';
+import 'package:app_context/src/core/ctx/context.dart';
 
 /// A wrapper for Base objects to pass context using partial application.
 abstract interface class ContextNode<Base> {
