@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 8.0.3">
+  <meta name="description" content="app_context API docs, for the Dart programming language.">
+  <title>app_context - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/F1rrock/context">app_context package</a></li>
+  </ol>
+  <div class="self-name">app_context</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        brightness_4
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        brightness_5
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="context-library">Context Library</h1>
+<p><strong>Context</strong> is a Dart library that provides a flexible and lightweight mechanism for passing context objects throughout your system. It enables loose coupling between components by utilizing anonymous objects, functional programming concepts like partial application, and key-value storage structures. This allows for easy dependency injection (DI) and configuration management without high coupling.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Context Propagation</strong>: Pass context objects through the system using a flexible interface.</li>
+<li><strong>Partial Application</strong>: Attach context to methods and functions dynamically, enabling cleaner and more functional design.</li>
+<li><strong>Anonymous Objects</strong>: Implement context in an immutable, lightweight manner, similar to anonymous classes in Java.</li>
+<li><strong>Key-Value Storage</strong>: Store and retrieve configuration data or service instances using an efficient key-value model.</li>
+<li><strong>Flexible DI</strong>: Achieve dependency injection without tight coupling using context interpretation and traits.</li>
+<li><strong>Flyweight Constructors</strong>: Use shared configurations across isolated parts of your system.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="installation">Installation</h3>
+<p>Add the following to your <code>pubspec.yaml</code> file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+context: ^1.0.0
+</code></pre>
+<p>Then, run:</p>
+<pre class="language-bash"><code class="language-bash">dart pub get
+</code></pre>
+<h3 id="usage">Usage</h3>
+<h4 id="defining-a-context">Defining a Context</h4>
+<p>A <code>Context</code> object stores configuration information that is passed between different system components. The context is immutable and is typically injected at the application startup.</p>
+<pre class="language-dart"><code class="language-dart">import 'package:app_context/src/core/traits/trait.dart';
+
+/// An object that implements the Context interface to pass configuration data.
+abstract interface class Context {
+/// Interpret the context as a specific type (Form).
+///
+/// [as] specifies the trait or interface required for interpretation.
+Form interpret&lt;Form&gt;({required final Trait&lt;Form&gt; as});
+}
+</code></pre>
+<h4 id="attaching-context-to-objects">Attaching Context to Objects</h4>
+<p>To pass context into system components, use the <code>ContextNode</code> interface, which allows partial application by attaching the context to a base object.</p>
+<pre class="language-dart"><code class="language-dart">import 'package:app_context/src/core/ctx/context.dart';
+
+/// A wrapper for Base objects to pass context using partial application.
+abstract interface class ContextNode&lt;Base&gt; {
+/// Attach a context to a base object.
+Base attach({required final Context ctx});
+}
+</code></pre>
+<h4 id="key-value-storage-for-context">Key-Value Storage for Context</h4>
+<p>The library also provides an interface for immutable key-value storage, which stores the actual configuration values.</p>
+<pre class="language-dart"><code class="language-dart">/// A key-value storage interface for context configurations.
+abstract interface class KeyValueStorage&lt;Key&gt; {
+/// Fetch a value of the required type by key.
+Value fetch&lt;Value&gt;({required final Key as});
+}
+</code></pre>
+<h4 id="interpreting-context-with-traits">Interpreting Context with Traits</h4>
+<p>Traits are used to interpret the context. When a component requires a specific service or object, the trait retrieves the required value from the key-value storage inside the context.</p>
+<pre class="language-dart"><code class="language-dart">/// A wrapper for types passed to the context's interpret method.
+abstract interface class Trait&lt;Form&gt; {
+/// Fetch the value required by the trait from the context's storage.
+///
+/// [to] is the storage used to retrieve the value.
+///
+Form refer({required final KeyValueStorage&lt;Type&gt; to});
+}
+</code></pre>
+<h2 id="license">License</h2>
+<p>This library is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="app_context">
+  <span class="name"><a href="app_context/app_context-library.html">app_context</a></span> 
+
+</dt>
+<dd>App context library
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://github.com/F1rrock/context">app_context package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">app_context</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="app_context/app_context-library.html">app_context</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    app_context
+      1.0.1
+  </span>
+
+  
+</footer>
+
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

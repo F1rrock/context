@@ -1,3 +1,26 @@
+/// # App context library
+///
+/// Context is a Dart library that provides a flexible and lightweight mechanism for passing
+/// context objects throughout your system. It enables loose coupling between components by
+/// utilizing anonymous objects, functional programming concepts like partial application,
+/// and key-value storage structures. This allows for easy dependency injection (DI) and
+/// configuration management without high coupling.
+///
+/// Features
+/// - Context Propagation: Pass context objects through the system using a flexible interface.
+/// - Partial Application: Attach context to methods and functions dynamically, enabling cleaner and more functional design.
+/// - Anonymous Objects: Implement context in an immutable, lightweight manner, similar to anonymous classes in Java.
+/// - Key-Value Storage: Store and retrieve configuration data or service instances using an efficient key-value model.
+/// - Flexible DI: Achieve dependency injection without tight coupling using context interpretation and traits.
+/// - Flyweight Constructors: Use shared configurations across isolated parts of your system.
+///
+/// App components
+/// - `Context` and `ContextNode` for managing context trees.
+/// - Custom errors like `NoValueWithSuchKey` and `UnresolvedValue`.
+/// - Storage solutions like `KeyValueStorage` and `InMemoryStorage`.
+/// - Utilities for context node adaptation and standard context handling.
+///
+/// This library is designed to be flexible and adaptable to different types of applications.
 library app_context;
 
 export 'package:app_context/src/core/ctx/context.dart' show Context;
